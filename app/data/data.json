@@ -1,0 +1,34 @@
+[
+    {
+        "id": "-1",
+        "pictur": "../img/contact1.jpg",
+        "fullName": "Ani Alaverdyan",
+        "phone": "+37497140195",
+        "location": "Stepanakert",
+        "birthDate": "1995-01-14"
+    },
+    {
+        "id": "-2",
+        "pictur": "../img/contact2.jpg",
+        "fullName": "Jennie Nichols",
+        "phone": "(489) 330-2385",
+        "location": "Billings",
+        "birthDate": "1992-03-08"
+    },
+    {
+        "id": "-3",
+        "pictur": "../img/contact3.jpg",
+        "fullName": "Tomothy Murphy",
+        "phone": "(732) 790-0888",
+        "location": "Valwood Pkwy",
+        "birthDate": "1956-07-09"
+    },
+    {
+        "id": "-4",
+        "pictur": "../img/contact4.jpg",
+        "fullName": "Neil Marshall",
+        "phone": "(272) 590-0836",
+        "location": "Michigan",
+        "birthDate": "1992-03-08"
+    }
+]

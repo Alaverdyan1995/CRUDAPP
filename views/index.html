@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <title>CRUD FROM API</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-mynav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Full-Stack CRUD Application</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <table>
+      <tr>
+        <td>
+          <form autocomplete="off">
+            <div>
+              <label>Picture</label>
+              <input type="file" id="picturId" name="img" accept="image/*">
+              <img width="50px" class="avatar hide" id = "savedIMGId">
+            </div>
+            <div>
+              <label>Full Name</label><label style="color: red;">*</label>
+              <input type="text" name="fullName" id="fullNameId" required>
+              <label class="validation-error hide" id="fullNameValidationErrorId">Full Name is required.</label>
+            </div>
+            <div>
+              <label>Phone</label><label style="color: red;">*</label>
+              <input type="text" name="phone" id="phoneId">
+              <label class="validation-error hide" id="phoneValidationErrorId">Phone is required.</label>
+              <label class="validation-error hide" id="phoneDuplicateValidationErrorId">Contact with such phone already
+                exists.</label>
+            </div>
+            <div>
+              <label>Location</label>
+              <input type="text" name="location" id="locationId">
+            </div>
+            <div>
+              <label>Date of Birth</label>
+              <input type="text" name="birthDate" id="dateId">
+            </div>
+            <div style="text-align: right; margin: 12px 0;">
+              <button type="button" class="btn btn-secondary"
+                onclick="event.preventDefault(); onFormeSubmit()">Submit</button>
+            </div>
+          </form>
+        </td>
+        <td style="width: 80%;">
+          <div class="me-auto p-2 bd-highlight">
+            <h2>Contacts
+          </div>
+          <div class="me-auto p-2 bd-highlight">
+            <table class="list table table-striped table-bordered " id="contactList">
+              <thead>
+                <tr>
+                  <th style="text-align: center; width: 5%;">#</th>
+                  <th style="text-align: center; width: 20%;">Picture</th>
+                  <th style="text-align: center; width: 30%">Full Name</th>
+                  <th style="text-align: center; width: 25%">Phone</th>
+                  <th style="text-align: center; width: 20%">Action</th>
+                </tr>
+              </thead>
+              <tbody id="mytable">
+              </tbody>
+            </table>
+          </div>
+
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <script src="js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
