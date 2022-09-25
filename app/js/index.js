@@ -35,6 +35,7 @@ function insertNewRecord(data, isnewData) {
     var row = table.insertRow(table.length);
     var cell1 = row.insertCell(0);
     cell1.innerHTML = data.id;
+    cell1.classList.add("hide")
     var cell2 = row.insertCell(1);
     if (isnewData) {
         cell2.innerHTML = `<div style="text-align: center"><img width="50px" src="${sessionStorage.getItem(data.pictur)}" class="avatar"></div>`;
