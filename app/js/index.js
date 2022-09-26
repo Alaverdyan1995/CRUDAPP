@@ -22,7 +22,7 @@ function getUniqueRandomId() {
 
 function readFormData() {
     var formData = {};
-    formData["pictur"] = document.getElementById("picturId").value
+    formData["picture"] = document.getElementById("pictureId").value
     formData["fullName"] = document.getElementById("fullNameId").value
     formData["phone"] = document.getElementById("phoneId").value
     formData["location"] = document.getElementById("locationId").value
@@ -38,9 +38,9 @@ function insertNewRecord(data, isnewData) {
     cell1.classList.add("hide")
     var cell2 = row.insertCell(1);
     if (isnewData) {
-        cell2.innerHTML = `<div style="text-align: center"><img width="50px" src="${sessionStorage.getItem(data.pictur)}" class="avatar"></div>`;
+        cell2.innerHTML = `<div style="text-align: center"><img width="50px" src="${sessionStorage.getItem(data.picture)}" class="avatar"></div>`;
     } else {
-        cell2.innerHTML = `<div style="text-align: center"><img width="50px" src="${data.pictur}" class="avatar"></div>`;
+        cell2.innerHTML = `<div style="text-align: center"><img width="50px" src="${data.picture}" class="avatar"></div>`;
     }
     var cell3 = row.insertCell(2);
     cell3.innerHTML = data.fullName;
@@ -53,10 +53,10 @@ function insertNewRecord(data, isnewData) {
 }
 
 function updateRecord(data) {
-    if (existingsFiles.includes(data.pictur)) {
-        selectedRow.cells[1].innerHTML = `<div style="text-align: center"><img width="50px" src="${data.pictur}" class="avatar"></div>`;
+    if (existingsFiles.includes(data.picture)) {
+        selectedRow.cells[1].innerHTML = `<div style="text-align: center"><img width="50px" src="${data.picture}" class="avatar"></div>`;
     } else {
-        selectedRow.cells[1].innerHTML = `<div style="text-align: center"><img width="50px" src="${sessionStorage.getItem(data.pictur)}" class="avatar"></div>`;
+        selectedRow.cells[1].innerHTML = `<div style="text-align: center"><img width="50px" src="${sessionStorage.getItem(data.picture)}" class="avatar"></div>`;
     }
     selectedRow.cells[2].innerHTML = data.fullName;
     selectedRow.cells[3].innerHTML = data.phone;
@@ -64,7 +64,7 @@ function updateRecord(data) {
 }
 
 function resetForm() {
-    document.getElementById("picturId").value = "";
+    document.getElementById("pictureId").value = "";
     document.getElementById("fullNameId").value = "";
     document.getElementById("phoneId").value = "";
     document.getElementById("locationId").value = "";
@@ -87,12 +87,12 @@ function resetForm() {
 
 
 function createNewContact(isFromUpdate) {
-    const pictur = document.getElementById("picturId").value == "" ? editedPictur : document.getElementById("picturId").value;
+    const picture = document.getElementById("pictureId").value == "" ? editedPictur : document.getElementById("pictureId").value;
     const fullName = document.getElementById("fullNameId").value;
     const phone = document.getElementById("phoneId").value;
     const location = document.getElementById("locationId").value;
     const birthDate = document.getElementById("dateId").value;
-    var contact = new Contact(isFromUpdate ? selectedRow.cells[0].innerHTML : getUniqueRandomId(), pictur, fullName, phone, location, birthDate);
+    var contact = new Contact(isFromUpdate ? selectedRow.cells[0].innerHTML : getUniqueRandomId(), picture, fullName, phone, location, birthDate);
     if (isFromUpdate) {
         allContacts = allContacts.filter(element => element.id != selectedRow.cells[0].innerHTML);
     }
@@ -102,9 +102,9 @@ function createNewContact(isFromUpdate) {
 }
 
 class Contact {
-    constructor(id, pictur, fullName, phone, location, birthDate) {
+    constructor(id, picture, fullName, phone, location, birthDate) {
         this.id = id;
-        this.pictur = pictur;
+        this.picture = picture;
         this.fullName = fullName;
         this.phone = phone;
         this.location = location;
@@ -138,11 +138,11 @@ function onEdit(td) {
     selectedRow = td.parentElement.parentElement.parentElement;
     getContactFromList(selectedRow.cells[0].innerHTML);
     document.getElementById("savedIMGId").classList.remove("hide");
-    if (existingsFiles.includes(editedContact.pictur)) {
-        document.getElementById("savedIMGId").src = editedPictur = editedContact.pictur;
+    if (existingsFiles.includes(editedContact.picture)) {
+        document.getElementById("savedIMGId").src = editedPictur = editedContact.picture;
     } else {
-        document.getElementById("savedIMGId").src = sessionStorage.getItem(editedContact.pictur);
-        editedPictur = editedContact.pictur
+        document.getElementById("savedIMGId").src = sessionStorage.getItem(editedContact.picture);
+        editedPicture = editedContact.picture
     }
     document.getElementById("fullNameId").value = editedContact.fullName;
     document.getElementById("phoneId").value = editedContact.phone;
@@ -198,12 +198,12 @@ function duplicateContact() {
     return duplicate;
 }
 
-document.querySelector("#picturId").addEventListener("change", function () {
+document.querySelector("#pictureId").addEventListener("change", function () {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
-        sessionStorage.setItem(document.getElementById("picturId").value, reader.result);
+        sessionStorage.setItem(document.getElementById("pictureId").value, reader.result);
         document.getElementById("savedIMGId").classList.remove("hide");
-        document.getElementById("savedIMGId").src = sessionStorage.getItem(document.getElementById("picturId").value);
+        document.getElementById("savedIMGId").src = sessionStorage.getItem(document.getElementById("pictureId").value);
     })
     reader.readAsDataURL(this.files[0]);
 })

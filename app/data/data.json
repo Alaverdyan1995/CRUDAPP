@@ -1,7 +1,7 @@
 [
     {
         "id": "-1",
-        "pictur": "../img/contact1.jpg",
+        "picture": "../img/contact1.jpg",
         "fullName": "Ani Alaverdyan",
         "phone": "+37497140195",
         "location": "Stepanakert",
@@ -9,7 +9,7 @@
     },
     {
         "id": "-2",
-        "pictur": "../img/contact2.jpg",
+        "picture": "../img/contact2.jpg",
         "fullName": "Jennie Nichols",
         "phone": "(489) 330-2385",
         "location": "Billings",
@@ -17,7 +17,7 @@
     },
     {
         "id": "-3",
-        "pictur": "../img/contact3.jpg",
+        "picture": "../img/contact3.jpg",
         "fullName": "Tomothy Murphy",
         "phone": "(732) 790-0888",
         "location": "Valwood Pkwy",
@@ -25,7 +25,7 @@
     },
     {
         "id": "-4",
-        "pictur": "../img/contact4.jpg",
+        "picture": "../img/contact4.jpg",
         "fullName": "Neil Marshall",
         "phone": "(272) 590-0836",
         "location": "Michigan",
